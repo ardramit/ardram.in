@@ -72,7 +72,7 @@ nav a {
 /* HERO */
 .hero {
   position: relative;
-  background: url("ardram-bg.png") center/cover no-repeat;
+  background: url("./ardram-bg.png") center/cover no-repeat;
   min-height: 85vh;
 }
 .hero-overlay {
@@ -351,5 +351,6 @@ footer {
 .stat-card:hover h3 {
   transform: translateY(-4px);
 }
+
 
 
