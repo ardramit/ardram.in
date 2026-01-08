@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>ARDRAM Hospital – Trusted Healthcare</title>
+
+  <!-- ✅ REQUIRED FOR MOBILE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- TOP INFO -->
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
-    <span><i class="fa-solid fa-phone"></i> <a href="tel:+917356280280">73562 80280</a></span>
-    <span><i class="fa-solid fa-clock"></i> 24/7 Emergency</span>
-    <span><i class="fa-solid fa-envelope"></i> ardramit@gmail.com</span>
+    <span>📞 73562 80280</span>
+    <span>🕒 24/7 Emergency</span>
+    <span>✉ ardramit@gmail.com</span>
   </div>
 </div>
 
@@ -24,18 +24,18 @@
 <header class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-  <img src="./ardram_png_21.png" alt="ARDRAM Logo">
-  <div class="logo-text">
-    <strong>ARDRAM</strong>
-    <small>The Healing Touch</small>
-  </div>
-</div>
+      <img src="ardram-bg.png" alt="ARDRAM Logo">
+      <div class="logo-text">
+        <strong>ARDRAM</strong>
+        <small>The Healing Touch</small>
+      </div>
+    </div>
 
     <nav>
       <a href="#services">Services</a>
       <a href="#doctors">Doctors</a>
       <a href="#about">About</a>
-      <a href="#appointment" class="btn-primary">Appointment</a>
+      <button class="btn-primary">Appointment</button>
     </nav>
   </div>
 </header>
@@ -43,19 +43,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-overlay"></div>
+
   <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>
-        Caring for Life,<br>
-        <span>Every Step</span>
-      </h1>
+    <div class="hero-content">
+      <h1>Caring for Life,<br><span>Every Step</span></h1>
       <p>
-        ARDRAM Hospital provides ethical, affordable,
-        and advanced medical care with compassion.
+        ARDRAM Hospital provides ethical, affordable, and advanced medical care with compassion.
       </p>
 
       <div class="hero-actions">
-        <button class="btn-primary" onclick="openWhatsApp('General Appointment')">
+        <button class="btn-primary" onclick="openWhatsApp('Appointment Booking')">
           Book on WhatsApp
         </button>
         <a href="#appointment" class="btn-outline">
@@ -66,138 +63,68 @@
 
     <div class="hero-stats">
       <div class="stat-card clickable" id="patientsCard">
-  <h3>10,000+</h3>
-  <p>Patients Treated</p>
-</div>
+        <h3>10,000+</h3>
+        <p>Patients Treated</p>
+      </div>
 
-<div class="stat-card clickable" id="experienceCard">
-  <h3>10+</h3>
-  <p>Years Experience</p>
-</div>
+      <div class="stat-card clickable" id="experienceCard">
+        <h3>10+</h3>
+        <p>Years Experience</p>
+      </div>
 
-<div class="stat-card clickable emergency" id="emergencyCard">
-  <h3>24/7</h3>
-  <p>Emergency Care</p>
-</div>
-<!-- EMERGENCY MODAL -->
-<div class="modal" id="emergencyModal">
-  <div class="modal-box">
-    <h3>Emergency Request</h3>
-
-    <input id="emgType" placeholder="Type of Emergency">
-    <input id="emgName" placeholder="Patient Name">
-    <input id="emgAge" placeholder="Age">
-    <input id="emgPhone" placeholder="Mobile Number">
-
-    <div class="modal-actions">
-      <button onclick="sendEmergency()">Send</button>
-      <button class="cancel" onclick="closeEmergency()">Cancel</button>
-    </div>
-  </div>
-</div>
-
+      <div class="stat-card emergency clickable" id="emergencyCard">
+        <h3>24/7</h3>
+        <p>Emergency Care</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section light">
-  <div class="container">
-    <h2 class="section-title">Our Medical Services</h2>
-
-    <div class="services-grid">
-      <div class="service-card" onclick="openWhatsApp('Orthopedics')">
-        <i class="fa-solid fa-bone"></i>
-        <h4>Orthopedics</h4>
-        <p>Bone, joint & trauma care.</p>
-      </div>
-
-      <div class="service-card" onclick="openWhatsApp('General Medicine')">
-        <i class="fa-solid fa-stethoscope"></i>
-        <h4>General Medicine</h4>
-        <p>Primary & preventive care.</p>
-      </div>
-
-      <div class="service-card" onclick="openWhatsApp('Pediatrics')">
-        <i class="fa-solid fa-baby"></i>
-        <h4>Pediatrics</h4>
-        <p>Child health & wellness.</p>
-      </div>
-
-      <div class="service-card" onclick="openWhatsApp('Physiotherapy')">
-        <i class="fa-solid fa-person-walking"></i>
-        <h4>Physiotherapy</h4>
-        <p>Rehabilitation & recovery.</p>
-      </div>
-
-      <div class="service-card emergency" onclick="openWhatsApp('Emergency')">
-        <i class="fa-solid fa-truck-medical"></i>
-        <h4>24/7 Emergency</h4>
-        <p>Immediate critical care.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container about-grid">
-    <div>
-      <h2>Why Choose ARDRAM?</h2>
-      <p>
-        We believe healthcare should be ethical, transparent,
-        and accessible to everyone. Our team is dedicated
-        to patient-first treatment with modern medical standards.
-      </p>
-    </div>
-    <ul class="about-points">
-      <li>✔ Experienced doctors</li>
-      <li>✔ Affordable treatment</li>
-      <li>✔ Modern diagnostics</li>
-      <li>✔ Compassionate care</li>
-    </ul>
   </div>
 </section>
 
 <!-- DOCTORS -->
-<section id="doctors" class="section light">
+<section class="section light" id="doctors">
   <h2 class="section-title">Our Doctors</h2>
-
-  <div id="doctorList" class="doctor-grid">
-    <!-- Doctors will be injected here -->
-  </div>
+  <div class="doctor-grid" id="doctorList"></div>
 </section>
 
-
 <!-- APPOINTMENT -->
-<section id="appointment" class="section">
+<section class="section" id="appointment">
   <div class="container appointment-grid">
     <div>
       <h2>Request an Appointment</h2>
-      <p>
-        Fill the form or contact us directly via WhatsApp.
-      </p>
+      <p>Fill the form or contact us via WhatsApp.</p>
     </div>
 
-    <div class="appointment-form">
+    <div>
       <input placeholder="Your Name">
       <input placeholder="Phone Number">
-      <textarea rows="4" placeholder="Describe your concern"></textarea>
-      <button class="btn-primary full" onclick="sendWhatsApp()">
-        Send Request
-      </button>
+      <textarea placeholder="Describe your concern"></textarea>
+      <button class="btn-primary full" onclick="sendWhatsApp()">Send Request</button>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>ARDRAM Hospital</strong></p>
-  <small>© 2026 ARDRAM Hospital. All rights reserved.</small>
+  <p>© 2026 ARDRAM Hospital. All rights reserved.</p>
 </footer>
 
-<!-- ADMIN PANEL -->
+<!-- EMERGENCY MODAL -->
+<div class="modal" id="emergencyModal">
+  <div class="modal-box">
+    <h3>Emergency Request</h3>
+    <input id="emgType" placeholder="Emergency Type">
+    <input id="emgName" placeholder="Patient Name">
+    <input id="emgAge" placeholder="Age">
+    <input id="emgPhone" placeholder="Mobile Number">
+
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="sendEmergency()">Send</button>
+      <button class="cancel" onclick="closeEmergency()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL (HIDDEN) -->
 <section class="admin-panel" id="adminPanel" style="display:none;">
   <h3>Admin Panel</h3>
 
@@ -208,17 +135,13 @@
   </div>
 
   <div id="adminControls" style="display:none;">
-    <h4>Add Doctor</h4>
-
     <input id="docName" placeholder="Doctor Name">
     <input id="docDept" placeholder="Department">
     <input id="docQual" placeholder="Qualification">
-
     <button onclick="addDoctor()">Add Doctor</button>
-    <button class="logout" onclick="adminLogout()">Logout</button>
+    <button onclick="adminLogout()">Logout</button>
   </div>
 </section>
-
 
 <script src="script.js"></script>
 </body>
