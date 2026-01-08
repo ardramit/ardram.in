@@ -1,181 +1,101 @@
-// ==========================
-// GLOBAL CONFIG
-// ==========================
 const phone = "917356280280";
 
-// ==========================
-// WHATSAPP GENERIC
-// ==========================
+// WhatsApp
 function openWhatsApp(context) {
-  const text =
-    `Hello ARDRAM Hospital,%0A%0A` +
-    `I would like to enquire about:%0A👉 ${context}`;
-
-  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+  window.open(
+    `https://wa.me/${phone}?text=Hello ARDRAM Hospital,%0A${context}`,
+    "_blank"
+  );
 }
 
-// ==========================
-// CONTACT FORM → WHATSAPP
-// ==========================
 function sendWhatsApp() {
-  const name = document.querySelector('input[placeholder="Your Name"]').value.trim();
-  const phoneNo = document.querySelector('input[placeholder="Phone Number"]').value.trim();
-  const message = document.querySelector('textarea').value.trim();
-
-  if (!name || !phoneNo || !message) {
-    alert("Please fill all fields");
-    return;
-  }
-
-  const text =
-    `Hello ARDRAM Hospital,%0A%0A` +
-    `👤 Name: ${name}%0A` +
-    `📞 Phone: ${phoneNo}%0A` +
-    `💬 Message:%0A${message}`;
-
-  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+  const inputs = document.querySelectorAll("input");
+  const msg = document.querySelector("textarea").value;
+  window.open(
+    `https://wa.me/${phone}?text=Name:${inputs[0].value}%0APhone:${inputs[1].value}%0AMessage:${msg}`,
+    "_blank"
+  );
 }
 
-// ==========================
-// STATS CARD ACTIONS
-// ==========================
-document.getElementById("patientsCard")?.addEventListener("click", () => {
-  window.open(
-    "https://www.google.com/search?q=ardram+hospital+reviews",
-    "_blank"
-  );
-});
-
-document.getElementById("experienceCard")?.addEventListener("click", () => {
-  window.open(
-    "https://www.instagram.com/ardramhospital/",
-    "_blank"
-  );
-});
-
-// ==========================
-// EMERGENCY MODAL
-// ==========================
-document.getElementById("emergencyCard")?.addEventListener("click", () => {
+// Emergency
+document.getElementById("emergencyCard").onclick = () =>
   document.getElementById("emergencyModal").style.display = "flex";
-});
 
 function closeEmergency() {
   document.getElementById("emergencyModal").style.display = "none";
 }
 
 function sendEmergency() {
-  const type = document.getElementById("emgType").value.trim();
-  const name = document.getElementById("emgName").value.trim();
-  const age = document.getElementById("emgAge").value.trim();
-  const phoneNo = document.getElementById("emgPhone").value.trim();
+  const type = emgType.value;
+  const name = emgName.value;
+  const age = emgAge.value;
+  const phoneNo = emgPhone.value;
 
-  if (!type || !name || !age || !phoneNo) {
-    alert("Please fill all details");
-    return;
-  }
-
-  const text =
-    `🚨 EMERGENCY REQUEST 🚨%0A%0A` +
-    `Type: ${type}%0A` +
-    `Name: ${name}%0A` +
-    `Age: ${age}%0A` +
-    `Mobile: ${phoneNo}`;
-
-  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+  window.open(
+    `https://wa.me/${phone}?text=🚨 Emergency 🚨%0AType:${type}%0AName:${name}%0AAge:${age}%0APhone:${phoneNo}`,
+    "_blank"
+  );
   closeEmergency();
 }
 
-// ================= ADMIN CREDENTIALS =================
-const ADMIN_USER = "admin";
-const ADMIN_PASS = "ardram123";
+// Stats clicks
+patientsCard.onclick = () =>
+  window.open("https://www.google.com/search?q=ardram+hospital+reviews");
 
-// ================= STATE =================
-let isAdmin = false;
-let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+experienceCard.onclick = () =>
+  window.open("https://www.instagram.com/ardramhospital/");
 
-// ================= RENDER DOCTORS =================
-function renderDoctors() {
-  const list = document.getElementById("doctorList");
-  if (!list) return;
-
-  list.innerHTML = "";
-
-  doctors.forEach((doc, index) => {
-    const card = document.createElement("div");
-    card.className = "doctor-card";
-
-    card.innerHTML = `
-      <strong>${doc.name}</strong>
-      <span>${doc.department}</span>
-      <span>${doc.qualification}</span>
-      ${isAdmin ? `<button onclick="deleteDoctor(${index})">Delete</button>` : ""}
-    `;
-
-    list.appendChild(card);
-  });
+// Admin panel toggle
+if (new URLSearchParams(window.location.search).get("admin") === "true") {
+  adminPanel.style.display = "block";
 }
 
-// ================= ADMIN LOGIN =================
-function adminLogin() {
-  const u = document.getElementById("adminUser").value;
-  const p = document.getElementById("adminPass").value;
+// Doctors admin
+let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+let isAdmin = false;
 
-  if (u === ADMIN_USER && p === ADMIN_PASS) {
+function renderDoctors() {
+  doctorList.innerHTML = "";
+  doctors.forEach((d, i) => {
+    doctorList.innerHTML += `
+      <div class="doctor-card">
+        <strong>${d.name}</strong>
+        <div>${d.department}</div>
+        <div>${d.qualification}</div>
+        ${isAdmin ? `<button onclick="deleteDoctor(${i})">Delete</button>` : ""}
+      </div>`;
+  });
+}
+renderDoctors();
+
+function adminLogin() {
+  if (adminUser.value === "admin" && adminPass.value === "ardram123") {
     isAdmin = true;
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("adminControls").style.display = "block";
+    loginBox.style.display = "none";
+    adminControls.style.display = "block";
     renderDoctors();
-  } else {
-    alert("Invalid credentials");
   }
 }
 
 function adminLogout() {
   isAdmin = false;
-  document.getElementById("loginBox").style.display = "block";
-  document.getElementById("adminControls").style.display = "none";
+  loginBox.style.display = "block";
+  adminControls.style.display = "none";
   renderDoctors();
 }
 
-// ================= ADD / DELETE DOCTOR =================
 function addDoctor() {
-  const name = document.getElementById("docName").value.trim();
-  const dept = document.getElementById("docDept").value.trim();
-  const qual = document.getElementById("docQual").value.trim();
-
-  if (!name || !dept || !qual) {
-    alert("Fill all fields");
-    return;
-  }
-
-  doctors.push({ name, department: dept, qualification: qual });
-  localStorage.setItem("doctors", JSON.stringify(doctors));
-
-  document.getElementById("docName").value = "";
-  document.getElementById("docDept").value = "";
-  document.getElementById("docQual").value = "";
-
-  renderDoctors();
-}
-
-function deleteDoctor(index) {
-  if (!confirm("Delete this doctor?")) return;
-
-  doctors.splice(index, 1);
+  doctors.push({
+    name: docName.value,
+    department: docDept.value,
+    qualification: docQual.value
+  });
   localStorage.setItem("doctors", JSON.stringify(doctors));
   renderDoctors();
 }
 
-// ================= INIT =================
-renderDoctors();
-
-// ==========================
-// ADMIN VISIBILITY CONTROL
-// ==========================
-const params = new URLSearchParams(window.location.search);
-
-if (params.get("admin") === "true") {
-  const panel = document.getElementById("adminPanel");
-  if (panel) panel.style.display = "block";
+function deleteDoctor(i) {
+  doctors.splice(i, 1);
+  localStorage.setItem("doctors", JSON.stringify(doctors));
+  renderDoctors();
 }
