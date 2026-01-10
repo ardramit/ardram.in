@@ -1,0 +1,272 @@
+body {
+  padding-top: 70px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* HERO */
+.hero {
+  min-height: calc(100vh - 70px);
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("ardram-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ABOUT ANIMATION – CORRECT WAY */
+
+/* default visible state */
+.about-text,
+.about-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* hidden BEFORE animation */
+.about-section.animate .about-text {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.about-section.animate .about-image {
+  opacity: 0;
+  transform: translateX(80px);
+}
+
+/* animated IN */
+.about-section.animate.show .about-text,
+.about-section.animate.show .about-image {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.dept-card {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dept-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.dept-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+}
+
+.doctor-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  height: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+.doctor-card h5 {
+  margin-bottom: 6px;
+  color: #0d6efd;
+}
+
+.doctor-card .dept {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.appointment-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.appointment-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.appointment-card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.appointment-card input,
+.appointment-card select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.appointment-card button {
+  width: 100%;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.small-label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* =======================
+   Appointment Modal
+======================= */
+
+.appointment-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-card {
+  background: #fff;
+  width: 92%;
+  max-width: 420px;
+  border-radius: 14px;
+  padding: 20px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  font-size: 26px;
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  cursor: pointer;
+}
+
+/* Inputs */
+.appointment-card input,
+.appointment-card select,
+.appointment-card button {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.appointment-card button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+/* =======================
+   Doctors Section
+======================= */
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 10px;
+}
+
+.doctor-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.doctor-card h4 {
+  color: #0d6efd;
+  font-size: 18px;
+}
+
+.doctor-card p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  .top-info {
+    display: none; /* hide email & emergency on small screens */
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+}
+
+.book-btn {
+  padding: 14px 22px;
+  font-size: 16px;
+  border-radius: 12px;
+}

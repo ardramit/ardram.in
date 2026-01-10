@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ardram Hospital</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+
+    <!-- LOGO + NAME -->
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+      <img src="ardram_png_21.png" alt="Ardram Logo" class="nav-logo me-2">
+      Ardram Hospital
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+
+      <!-- EMERGENCY INFO -->
+      <div class="navbar-text text-white me-4 d-none d-lg-block">
+        🚑 <strong>Emergency:</strong> +91 7356409409 |
+        ✉️ info@ardram.in
+      </div>
+
+      <!-- NAV LINKS -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
+        <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container text-center text-white">
+    <h1>Ardram Hospital</h1>
+    <p>Compassion • Care • Commitment</p>
+    <button class="btn btn-light" onclick="openAppointment()">Book Appointment</button>
+  </div>
+</section>
+ 
+
+
+<!-- ABOUT -->
+<section id="about" class="container my-5 about-section">
+  <div class="row align-items-center">
+
+    <div class="col-md-6 about-text">
+      <h2>About Us</h2>
+      <p>
+        Ardram Hospital is widely recognized for its compassionate care, experienced
+        medical team, and commitment to patient well-being. Patients frequently
+        appreciate the hospital’s clean environment, well-organized departments,
+        and the supportive approach of doctors and nursing staff. Known for its
+        reliable emergency services and accessible treatment options, Ardram Hospital
+        focuses on clear communication, ethical medical practices, and timely care.
+        The hospital continues to earn trust by combining modern medical facilities
+        with a warm, community-focused approach to healthcare.
+      </p>
+    </div>
+
+    <div class="col-md-6 about-image text-center">
+      <img src="ardram-logo.png"
+           class="img-fluid rounded shadow"
+           style="max-width: 320px;"
+           alt="Ardram Hospital Logo">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DEPARTMENTS -->
+<section id="departments" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Departments</h2>
+
+    <div class="row">
+
+      <!-- General Medicine -->
+      <div class="col-md-4 mb-4">
+        <a href="general-medicine.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="genral-medicine.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>General Medicine</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- ENT -->
+      <div class="col-md-4 mb-4">
+        <a href="ent.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="ent-image.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>ENT</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Ophthalmology -->
+      <div class="col-md-4 mb-4">
+        <a href="ophthalmology.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="ophthalmology.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Ophthalmology</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Pulmonology -->
+      <div class="col-md-4 mb-4">
+        <a href="pulmonology.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="pulmonology-image.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Pulmonology</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Surgery -->
+      <div class="col-md-4 mb-4">
+        <a href="surgery.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="surgery.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Surgery</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Emergency -->
+      <div class="col-md-4 mb-4">
+        <a href="emergency.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="emergency-deparment.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Emergency Department</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Dental -->
+      <div class="col-md-4 mb-4">
+        <a href="dental.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="dental-image.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Dental</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Diabetic Care -->
+      <div class="col-md-4 mb-4">
+        <a href="diabetic-care.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="diabetic care.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Diabetic Care</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- IP Facilities -->
+      <div class="col-md-4 mb-4">
+        <a href="ip-facilities.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="ip-facility.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>IP Facilities</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Laboratory -->
+      <div class="col-md-4 mb-4">
+        <a href="lab.html" class="text-decoration-none text-dark">
+          <div class="card dept-card">
+            <img src="lab-image.jpg" class="card-img-top">
+            <div class="card-body text-center">
+              <h5>Laboratory</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- DOCTORS -->
+<section id="doctors" class="container my-5">
+  <h2 class="text-center mb-5">Our Doctors</h2>
+
+  <div class="row g-4">
+
+    <!-- General Medicine & Endocrinology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Asif Ali Thayyil</h5>
+      <p class="dept">General Medicine & Endocrinology</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 11:00 AM – 12:30 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Farish</h5>
+      <p class="dept">General Medicine & Endocrinology</p>
+      <p><b>Day:</b> Fri</p>
+      <p><b>Time:</b> 4:15 PM – 5:45 PM</p>
+    </div></div>
+
+    <!-- Orthopaedics -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Jaseem Shamsudeen T</h5>
+      <p class="dept">Orthopaedics</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 11:00 AM – 2:00 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Dilshad</h5>
+      <p class="dept">Orthopaedic</p>
+      <p><b>Day:</b> Wed, Sat</p>
+      <p><b>Time:</b> 4:00 PM</p>
+    </div></div>
+
+    <!-- Paediatrics -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Ajas Bin Abdu</h5>
+      <p class="dept">Paediatrics & Neonatology</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 12:30 PM – 2:00 PM</p>
+    </div></div>
+
+    <!-- Diabetology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Sajeeha V. P</h5>
+      <p class="dept">Diabetology & Podiatry</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 10:30 AM – 12:00 PM</p>
+    </div></div>
+
+    <!-- Ophthalmology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Ashra C</h5>
+      <p class="dept">Ophthalmology</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 12:00 PM – 2:00 PM</p>
+    </div></div>
+
+    <!-- Dental -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Shajeea Shamsudeen T</h5>
+      <p class="dept">Dental Medicine</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 10:30 AM – 5:30 PM</p>
+    </div></div>
+
+    <!-- ENT -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Dhiruba Salan</h5>
+      <p class="dept">ENT</p>
+      <p><b>Day:</b> Mon to Sat</p>
+      <p><b>Time:</b> 10:00 AM – 12:00 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Ashraf Kunjil</h5>
+      <p class="dept">ENT</p>
+      <p><b>Day:</b> Wed</p>
+      <p><b>Time:</b> 7:00 PM</p>
+    </div></div>
+
+    <!-- Dermatology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Shabna C V</h5>
+      <p class="dept">Dermatology</p>
+      <p><b>Day:</b> Tue, Sat</p>
+      <p><b>Time:</b> 12:30 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Anas P Abdulla</h5>
+      <p class="dept">Dermatology</p>
+      <p><b>Day:</b> Thu</p>
+      <p><b>Time:</b> 5:00 PM</p>
+    </div></div>
+
+    <!-- Pulmonology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Shahna Nidal</h5>
+      <p class="dept">Pulmonology</p>
+      <p><b>Day:</b> Mon, Wed, Thu</p>
+      <p><b>Time:</b> 5:00 PM – 6:30 PM</p>
+    </div></div>
+
+    <!-- Gynaecology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Abiya Salim</h5>
+      <p class="dept">Gynaecology</p>
+      <p><b>Day:</b> Sat</p>
+      <p><b>Time:</b> 3:30 PM – 4:30 PM</p>
+    </div></div>
+
+    <!-- General Surgery -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Muhammed Rishad N</h5>
+      <p class="dept">General Surgery</p>
+      <p><b>Day:</b> Fri, Mon</p>
+      <p><b>Time:</b> 5:00 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Afra Abdurahman</h5>
+      <p class="dept">General Surgery</p>
+      <p><b>Day:</b> Thu</p>
+      <p><b>Time:</b> 4:00 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Nabeel</h5>
+      <p class="dept">General Surgery</p>
+      <p><b>Day:</b> Sat</p>
+      <p><b>Time:</b> 4:00 PM</p>
+    </div></div>
+
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Nissar Usman</h5>
+      <p class="dept">General Surgery</p>
+      <p><b>Day:</b> Mon</p>
+      <p><b>Time:</b> 4:00 PM</p>
+    </div></div>
+
+    <!-- Urology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Anoob Abubakkar</h5>
+      <p class="dept">Urology</p>
+      <p><b>Day:</b> Thu</p>
+      <p><b>Time:</b> 4:30 PM – 5:30 PM</p>
+    </div></div>
+
+    <!-- Neurology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Chandrasekhar J</h5>
+      <p class="dept">Neurology</p>
+      <p><b>Day:</b> Fri</p>
+      <p><b>Time:</b> 5:00 PM</p>
+    </div></div>
+
+    <!-- Nephrology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Marzooq Ali</h5>
+      <p class="dept">Nephrology</p>
+      <p><b>Day:</b> Wed</p>
+      <p><b>Time:</b> 5:00 PM</p>
+    </div></div>
+
+    <!-- Gastrosurgery -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Fahaduzaman</h5>
+      <p class="dept">Gastrosurgery</p>
+      <p><b>Day:</b> Thu</p>
+      <p><b>Time:</b> 4:30 PM</p>
+    </div></div>
+
+    <!-- Radiology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Hafsal</h5>
+      <p class="dept">Radiology</p>
+      <p><b>Day:</b> Mon, Tue, Thu, Sat</p>
+      <p><b>Time:</b> As Scheduled</p>
+    </div></div>
+
+    <!-- Psychology -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Ms. Ashwani Das</h5>
+      <p class="dept">Psychology</p>
+      <p><b>Day:</b> On Call</p>
+      <p><b>Time:</b> On Call</p>
+    </div></div>
+
+    <!-- Psychiatry -->
+    <div class="col-md-4"><div class="doctor-card">
+      <h5>Dr. Rahna Kaladi</h5>
+      <p class="dept">Psychiatry</p>
+      <p><b>Day:</b> Thu</p>
+      <p><b>Time:</b> As Scheduled</p>
+    </div></div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h2>Contact Us</h2>
+    <p>📍 NH-66, Thrissur-Kozhikode road PO Punnathala, Malappuram, dist, Vettichira, Kerala 676552</p>
+    <p>📞 +91 7356280280  +91 7356290290</p>
+    <p>✉️ contact: info@ardram.in</p>
+    <P>carrier : ardramhospitalhr@gmail.com 
+               : 7356309309
+    </P>
+  </div>
+</section>
+
+<div id="appointmentModal" class="appointment-modal">
+  <div class="appointment-card">
+    <span class="close-btn" onclick="closeAppointment()">×</span>
+
+    <h3>Book Appointment</h3>
+
+    <input type="text" id="pname" placeholder="Patient Name *">
+    <input type="number" id="age" placeholder="Age *">
+    <input type="text" id="place" placeholder="Place *">
+    <input type="tel" id="phone" placeholder="Phone / WhatsApp Number *">
+
+    <select id="doctor">
+  <option value="">Select Doctor *</option>
+
+  <!-- General Medicine & Endocrinology -->
+  <option>Dr. Asif Ali Thayyil – General Medicine & Endocrinology</option>
+  <option>Dr. Farish – General Medicine & Endocrinology</option>
+
+  <!-- Orthopaedics -->
+  <option>Dr. Jaseem Shamsudeen T – Orthopaedics</option>
+  <option>Dr. Dilshad – Orthopaedics</option>
+
+  <!-- Paediatrics -->
+  <option>Dr. Ajas Bin Abdu – Paediatrics & Neonatology</option>
+
+  <!-- Diabetology -->
+  <option>Dr. Sajeeha V. P – Diabetology & Podiatry</option>
+
+  <!-- Ophthalmology -->
+  <option>Dr. Ashra C – Ophthalmology</option>
+
+  <!-- Dental -->
+  <option>Dr. Shajeea Shamsudeen T – Dental Medicine</option>
+
+  <!-- ENT -->
+  <option>Dr. Dhiruba Salan – ENT</option>
+  <option>Dr. Ashraf Kunjil – ENT</option>
+
+  <!-- Dermatology -->
+  <option>Dr. Shabna C V – Dermatology</option>
+  <option>Dr. Anas P Abdulla – Dermatology</option>
+
+  <!-- Pulmonology -->
+  <option>Dr. Shahna Nidal – Pulmonology</option>
+
+  <!-- Gynaecology -->
+  <option>Dr. Abiya Salim – Gynaecology</option>
+
+  <!-- General Surgery -->
+  <option>Dr. Muhammed Rishad N – General Surgery</option>
+  <option>Dr. Afra Abdurahman – General Surgery</option>
+  <option>Dr. Nabeel – General Surgery</option>
+  <option>Dr. Nissar Usman – General Surgery</option>
+
+  <!-- Urology -->
+  <option>Dr. Anoob Abubakkar – Urology</option>
+
+  <!-- Neurology -->
+  <option>Dr. Chandrasekhar J – Neurology</option>
+
+  <!-- Nephrology -->
+  <option>Dr. Marzooq Ali – Nephrology</option>
+
+  <!-- Gastrosurgery -->
+  <option>Dr. Fahaduzaman – Gastrosurgery</option>
+
+  <!-- Radiology -->
+  <option>Dr. Hafsal – Radiology</option>
+
+  <!-- Psychology -->
+  <option>Ms. Ashwani Das – Psychology</option>
+
+  <!-- Psychiatry -->
+  <option>Dr. Rahna Kaladi – Psychiatry</option>
+
+</select>
+    <input type="date" id="date" style="font-size:16px">
+    <button onclick="sendAppointment()">Submit Appointment</button>
+  </div>
+</div>
+
+
+<footer class="bg-dark text-white text-center py-3">
+  © 2026 Ardram Hospital. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
