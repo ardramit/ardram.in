@@ -35,6 +35,8 @@ if (!localStorage.getItem(doctorsKey)) {
   ]));
 }
 
+
+
 function loadDoctors() {
   const doctors = JSON.parse(localStorage.getItem(doctorsKey)) || [];
   const container = document.getElementById("doctorCards");
@@ -94,3 +96,13 @@ Preferred Date: ${dateVal}`;
   window.open(whatsappURL, "_blank");
   closeAppointment();
 }
+
+
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", function() {
+    document.querySelectorAll(".nav-link")
+      .forEach(l => l.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
