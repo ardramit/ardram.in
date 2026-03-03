@@ -20,8 +20,9 @@
 
     <!-- LOGO + NAME -->
     <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-      <img src="ardram_png_21.png" alt="Ardram Logo" class="nav-logo me-2">
-      Ardram Hospital
+      <img src="ardram_png_21.png" alt="Ardram Logo" class="nav-logo">
+      <img src="ardram-text.png" alt="Ardram Hospital – The Healing Touch" class="logo-text">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     </a>
 
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -40,6 +41,8 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mission">Mission</a></li>
+        <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
         <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
         <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -54,41 +57,41 @@
 <section id="home" class="hero">
   <div class="container text-center text-white">
     <h1>Ardram Hospital</h1>
-    <p>Compassion • Care • Commitment</p>
+    <p>THE HEALING TOUCH</p>
     <button class="btn btn-light" onclick="openAppointment()">Book Appointment</button>
   </div>
 </section>
  
 
 
-<!-- ABOUT -->
-<section id="about" class="container my-5 about-section">
-  <div class="row align-items-center">
-
-    <div class="col-md-6 about-text">
-      <h2>About Us</h2>
+<section class="info-section">
+  <div class="info-container">
+   <div class="info-card" id="about">
+  <h2>About Us</h2>
       <p>
-        Ardram Hospital is widely recognized for its compassionate care, experienced
-        medical team, and commitment to patient well-being. Patients frequently
-        appreciate the hospital’s clean environment, well-organized departments,
-        and the supportive approach of doctors and nursing staff. Known for its
-        reliable emergency services and accessible treatment options, Ardram Hospital
-        focuses on clear communication, ethical medical practices, and timely care.
-        The hospital continues to earn trust by combining modern medical facilities
-        with a warm, community-focused approach to healthcare.
+        A community hospital and a comprehensive health care partner that you can trust and be proud of.
       </p>
-    </div>
+</div>
 
-    <div class="col-md-6 about-image text-center">
-      <img src="ardram-logo.png"
-           class="img-fluid rounded shadow"
-           style="max-width: 320px;"
-           alt="Ardram Hospital Logo">
-    </div>
+<div class="info-card" id="mission">
+  <h2>Mission</h2>
+      <p>
+        We intend to extend our healing touch to the ailing masses with commitment and sincerity.
+      </p>
+</div>
 
-  </div>
+<div class="info-card" id="vision">
+  <h2>Vision</h2>
+      <p>
+        We intend to extend our healing touch to the ailing masses with commitment and sincerity.
+      </p>
+</div>
+    
+    <!-- Logo Card -->
+    <div class="info-card logo-card">
+      <img src="ardram-logo.png" alt="Ardram Hospital Logo">
+    </div>
 </section>
-
 
 <!-- DEPARTMENTS -->
 <section id="departments" class="py-5 bg-light">
@@ -427,7 +430,80 @@
   </div>
 </section>
 
+<!-- =========================
+   Customer Information Portal
+========================= -->
 
+<section id="customer-info" class="customer-section">
+  <div class="container">
+
+    <h2 class="text-center mb-4">Stay Connected With Ardram</h2>
+    <p class="text-center text-muted mb-5">
+      Submit your details to receive updates, appointment reminders, and important healthcare notifications.
+    </p>
+
+    <div class="info-form-card">
+
+      <form id="customerForm">
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Service Interested In</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+
+        <!-- Privacy Preview -->
+        <div class="privacy-box">
+          <p>
+            Ardram respects your privacy and is committed to protecting your personal information...
+            <span id="dots">...</span>
+            <span id="moreText" style="display:none;">
+              When you use our website (ardram.in) or provide your contact details, we may collect information such as your name, mobile number, email address, and service-related details to provide healthcare services, respond to inquiries, and send important updates. By sharing your contact information and opting in, you consent to receive communications from us via RCS, SMS, WhatsApp, email, phone calls, or other electronic communication channels for purposes including appointment confirmations, reminders, service updates, and important notifications. You may opt out of promotional or non-essential communications at any time by replying “STOP” to messages or contacting us directly. We do not sell or rent your personal information and only share data with authorized service providers as necessary to deliver our services or comply with legal requirements. We implement reasonable administrative and technical safeguards to protect your information and retain it only for as long as required for operational, medical, or legal purposes.
+            </span>
+            <button type="button" class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+          </p>
+        </div>
+
+        <!-- Consent Checkboxes -->
+        <div class="form-check mt-3">
+          <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+          <label class="form-check-label" for="privacyCheck">
+            I have read and agree to the Privacy Policy.
+          </label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" id="marketingCheck" required>
+          <label class="form-check-label" for="marketingCheck">
+            I consent to receive messages via RCS, SMS, WhatsApp, email, or phone.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4 w-100">
+          Submit Information
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
 <!-- CONTACT -->
 <section id="contact" class="bg-primary text-white py-5">
   <div class="container text-center">
@@ -435,7 +511,7 @@
     <p>📍 NH-66, Thrissur-Kozhikode road PO Punnathala, Malappuram, dist, Vettichira, Kerala 676552</p>
     <p>📞 +91 7356280280  +91 7356290290</p>
     <p>✉️ contact: info@ardram.in</p>
-    <P>carrier : ardramhospitalhr@gmail.com 
+    <P>career : ardramhospitalhr@gmail.com 
                : 7356309309
     </P>
   </div>
@@ -523,10 +599,27 @@
 </div>
 
 
+
 <footer class="bg-dark text-white text-center py-3">
   © 2026 Ardram Hospital. All rights reserved.
 </footer>
+<script>
+function toggleReadMore() {
+  const dots = document.getElementById("dots");
+  const moreText = document.getElementById("moreText");
+  const btn = document.querySelector(".read-more-btn");
 
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    dots.style.display = "none";
+    btn.innerText = "Read Less";
+  } else {
+    moreText.style.display = "none";
+    dots.style.display = "inline";
+    btn.innerText = "Read More";
+  }
+}
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
